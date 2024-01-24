@@ -1,0 +1,22 @@
+[package]
+name = "editorconfig-sys"
+version = "0.1.0"
+edition = "2021"
+authors = ["Thorsten Blum <thorsten.blum@toblux.com>"]
+homepage = "https://github.com/toblux/editorconfig-sys"
+repository = "https://github.com/toblux/editorconfig-sys"
+documentation = "https://docs.rs/editorconfig-sys"
+description = "Native Rust bindings to libeditorconfig"
+readme = "README.md"
+license = "MIT"
+keywords = ["editorconfig", "libeditorconfig", "bindings", "ffi", "sys"]
+categories = ["external-ffi-bindings"]
+links = "editorconfig"
+build = "build.rs"
+
+[dev-dependencies]
+rand = "0.8.5"
+
+[build-dependencies]
+bindgen = "0.69.2"
+pkg-config = "0.3.29"
