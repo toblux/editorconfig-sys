@@ -1,4 +1,4 @@
-use pkg_config::Library;
+use pkg_config::{Config, Library};
 
 const LIBRARY_NAME: &str = "editorconfig";
 
@@ -8,12 +8,19 @@ const MIN_VERSION: &str = "0.12.5";
 const MAX_VERSION: &str = "1.0.0";
 
 fn main() {
-    let err_msg = format!("Unable to find library {} >= {}", LIBRARY_NAME, MIN_VERSION);
-    let lib = pkg_config::Config::new()
+    if let Ok(lib) = Config::new()
         .range_version(MIN_VERSION..MAX_VERSION)
         .probe(LIBRARY_NAME)
-        .expect(&err_msg);
-    gen_bindings(lib);
+    {
+        if cfg!(feature = "buildtime-bindgen") {
+            gen_bindings(lib);
+        }
+    } else {
+        eprintln!(
+            "Unable to find lib {} >= {} < {}",
+            LIBRARY_NAME, MIN_VERSION, MAX_VERSION
+        );
+    }
 }
 
 fn gen_bindings(lib: Library) {
@@ -29,7 +36,7 @@ fn gen_bindings(lib: Library) {
         .generate()
         .expect("Failed to generate bindings");
 
-    // Write bindings to `$OUT_DIR/bindings.rs`
+    // Write auto-generated bindings to `$OUT_DIR/bindings.rs`
     let out_path = std::path::PathBuf::from(std::env::var("OUT_DIR").unwrap());
     bindings
         .write_to_file(out_path.join("bindings.rs"))

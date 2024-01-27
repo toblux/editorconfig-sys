@@ -1,6 +1,6 @@
-# Native Rust Bindings to libeditorconfig
+# Rust FFI Bindings to libeditorconfig
 
-This crate uses [bindgen](https://crates.io/crates/bindgen) and [pkg-config](https://crates.io/crates/pkg-config) to automatically generate Rust FFI bindings to the [EditorConfig Core C](https://github.com/editorconfig/editorconfig-core-c) library.
+This crate uses [bindgen](https://crates.io/crates/bindgen) and [pkg-config](https://crates.io/crates/pkg-config) to automatically generate Rust FFI bindings to the [editorconfig-core](https://github.com/editorconfig/editorconfig-core-c) C library.
 
 Following the `*-sys` package convention, `editorconfig-sys` is just a thin wrapper around the native `libeditorconfig` library.
 
