@@ -1,6 +1,6 @@
 [package]
 name = "editorconfig-sys"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Thorsten Blum <thorsten.blum@toblux.com>"]
 homepage = "https://github.com/toblux/editorconfig-sys"
