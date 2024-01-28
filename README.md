@@ -4,7 +4,7 @@ This crate uses [bindgen](https://crates.io/crates/bindgen) and [pkg-config](htt
 
 Following the `*-sys` package convention, `editorconfig-sys` is just a thin wrapper around the native `libeditorconfig` library.
 
-<!-- The "safe" Rust bindings to `libeditorconfig`, built on top of this `editorconfig-sys` crate, can be found [here](https://github.com/toblux/rust-editorconfig). -->
+The safe Rust bindings to `libeditorconfig`, built on top of this `editorconfig-sys` crate, can be found [here](https://github.com/toblux/editorconfig-rs).
 
 ![Workflow status](https://github.com/toblux/editorconfig-sys/actions/workflows/test.yml/badge.svg)
 
