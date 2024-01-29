@@ -10,7 +10,9 @@ The safe Rust bindings to `libeditorconfig`, built on top of this `editorconfig-
 
 ## Dependencies
 
-To use this crate, `libeditorconfig >= 0.12.5` must be installed and `pkg-config` must be able to find it. You can check if `pkg-config` can find the library and which version is installed with:
+To use this crate, `pkg-config` and `libeditorconfig >=0.12.5 <1.0.0` must be installed. For example, on Debian or Ubuntu you could use `apt-get install pkg-config libeditorconfig-dev` and on macOS `brew install pkg-config editorconfig` to install the dependencies.
+
+You can check if `pkg-config` can find the library and which version is installed with:
 
 ```sh
 pkg-config --modversion editorconfig
