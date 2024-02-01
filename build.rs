@@ -1,3 +1,6 @@
+// This build script currently assumes that `libeditorconfig >=0.12.5 <1.0.0` is
+// installed and that `pkg-config` can find it.
+
 use pkg_config::{Config, Library};
 
 const LIBRARY_NAME: &str = "editorconfig";
