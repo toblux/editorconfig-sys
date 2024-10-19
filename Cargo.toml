@@ -12,6 +12,7 @@ readme = "README.md"
 license = "MIT"
 keywords = ["editorconfig", "libeditorconfig", "bindings", "ffi", "sys"]
 categories = ["external-ffi-bindings"]
+exclude = [".github"]
 links = "editorconfig"
 build = "build.rs"
 
