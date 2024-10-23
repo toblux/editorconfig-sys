@@ -6,7 +6,8 @@ Following the `*-sys` package convention, `editorconfig-sys` is just a thin wrap
 
 The safe Rust bindings to `libeditorconfig`, built on top of this `editorconfig-sys` crate, can be found [here](https://github.com/toblux/editorconfig-rs).
 
-![Workflow status](https://github.com/toblux/editorconfig-sys/actions/workflows/test.yml/badge.svg)
+[![Build status](https://github.com/toblux/editorconfig-sys/actions/workflows/test.yml/badge.svg)](https://github.com/toblux/editorconfig-sys/actions)
+[![Crates.io](https://img.shields.io/crates/v/editorconfig-sys.svg)](https://crates.io/crates/editorconfig-sys)
 
 ## Dependencies
 
