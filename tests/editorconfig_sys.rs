@@ -85,16 +85,16 @@ fn get_version() {
 
 #[test]
 fn set_get_version() {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
 
     let mut out_major = -1;
     let mut out_minor = -1;
     let mut out_patch = -1;
 
     for _ in 1..1000 {
-        let in_major = rng.gen_range(0..1000);
-        let in_minor = rng.gen_range(1..1000);
-        let in_patch = rng.gen_range(0..1000);
+        let in_major = rng.random_range(0..1000);
+        let in_minor = rng.random_range(1..1000);
+        let in_patch = rng.random_range(0..1000);
 
         unsafe {
             let h = editorconfig_handle_init();
@@ -248,10 +248,10 @@ fn get_error_message_no_error() {
 
 #[test]
 fn get_error_message_parse_error() {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
 
     // Any error > 0 is a parsing error at that line
-    let parse_err_line_num = rng.gen_range(1..=i32::MAX);
+    let parse_err_line_num = rng.random_range(1..=i32::MAX);
 
     unsafe {
         let err_msg = editorconfig_get_error_msg(parse_err_line_num);
