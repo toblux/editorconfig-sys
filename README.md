@@ -25,7 +25,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-editorconfig-sys = "0.1.2"
+editorconfig-sys = "0.1.3"
 ```
 
 ## Usage
